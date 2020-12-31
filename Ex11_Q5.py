@@ -12,10 +12,12 @@ class Agent:
 def find_match(set1: List[Agent], set2: List[Agent]) -> dict:
     """
 
-    :param set1:
-    :param set2:
-    :return:
-    >>> s1 = Agent("Rafi", ["Aviva", "Gila", "Batya"])
+    :param set1: list of agents, lets look at them as "students"
+    :param set2: list of agents, lets look at them as departments
+    :return: perfect stable match. AKA each student get his best priority for department (if possible)
+    Note that the order of set1, set2 is important ( if we put the depatments as set1, we would get
+    the best stable match possible in the eyes of the departments.
+    >>> s1 = Agent("Rafi", ["Aviva", "Gila", "Batya"]) # rafi prefers Aviva the most, than Gila, and the least prefered is Batya
     >>> s2 = Agent("Shlomo", ["Aviva", "Batya", "Gila"])
     >>> s3 = Agent("Tomer", ["Batya", "Gila", "Aviva"])
     >>> d1 = Agent("Gila", ["Shlomo", "Tomer", "Rafi"])
